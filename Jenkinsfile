@@ -20,7 +20,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo 'Running tests...'
-                sh '. venv/bin/activate && pytest tests/'
+                sh '. venv/bin/activate && python -m pytest tests/'
             }
         }
     }
