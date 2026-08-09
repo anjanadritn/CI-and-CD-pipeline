@@ -23,6 +23,13 @@ pipeline {
                 sh '. venv/bin/activate && python -m pytest tests/'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker image...'
+                sh 'docker build -t ci-cd-demo-app .'
+            }
+        }
     }
 
     post {
